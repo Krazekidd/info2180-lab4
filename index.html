@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content = "IE = edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "app.js"></script>
+    <link rel ="stylesheet" href="styles.css">
+</head>
+        <header>
+            <div class = "container">
+            <h1>AVENGERS CHARACTER SEARCH</h1>
+    </div>
+</header>
+
+<body>
+<section class="Search">
+    <div class = "container">
+    <p>Search by Full Name or Alias</p>
+    <form action="superheroes.php" method = "get">
+        <div class="form-group">
+        <input type = "text" id="heroTxt" name= "heroName" placeholder=" eg. Captain America or Steve Rogers">
+        </div>
+        <button type = "submit">Search</button>
+    </form>
+   </div>
+</section>
+<br>
+<section class = "Rsult">
+    <div class = "container" >
+    <h2 id = "resultTitle">RESULT</h2>
+    <hr>
+    <div id = "result"></div>
+</section>
+</div>
+</body>
+</html>
+
+

@@ -65,8 +65,29 @@ $superheroes = [
 
 ?>
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+<?php if (empty($_GET["heroName"])): ?>
+    <ul>
+        <?php foreach ($superheroes as $superhero): ?>
+        <li><?= $superhero['alias']; ?></li>
+        <?php endforeach;?>
+    </ul>
+
+
+<?php elseif (isset($_GET["heroName"])):
+    $retVal = null;
+    $name = htmlentities($_GET["heroName"]);
+    foreach ($superheroes as $superhero): 
+        if ($name == $superhero["alias"] || $name == $superhero["name"]):        
+            $retVal = $superhero;
+?>
+        <h4 id="hero"><?= $retVal["alias"] ?></h4>
+        <h3>A.K.A. <?= $retVal["name"] ?></h3>    
+        <p><?= $retVal["biography"]?></p>
+        <?php 
+        endif;
+        endforeach;
+        if ($retVal == null):
+        ?>
+            <p id="error">Superhero not found</p>
+<?php endif; ?>
+<?php endif; ?>
